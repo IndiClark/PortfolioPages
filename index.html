@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home - Indi Clark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body style="margin: 28px;">
+    <section id="home">
+        <h1 class="name-title">Indi Clark</h1>
+        <h2>Welcome to My Portfolio</h2>
+        <a href="#navigation-boxes" class="down-arrow">&#8595;</a>
+    </section>
+
+    <section id="navigation-boxes" style="display: none;">
+        <div class="nav-boxes">
+            <a href="about.html" class="nav-box">About Me</a>
+            <a href="portfolio.html" class="nav-box">Portfolio</a>
+            <a href="contact.html" class="nav-box">Contact</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+    <script src="nav.js"></script>
+    <script>
+        window.onload = function () {
+            function launchConfetti() {
+                confetti({
+                    particleCount: 3,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 }
+                });
+                confetti({
+                    particleCount: 3,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 }
+                });
+            }
+            setInterval(launchConfetti, 300);
+            const nameTitle = document.querySelector('.name-title');
+            nameTitle.classList.add('visible');
+        };
+
+        document.querySelector('.down-arrow').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('navigation-boxes').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
